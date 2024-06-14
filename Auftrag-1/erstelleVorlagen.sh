@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 mkdir -p _templates
 touch _templates/datei-1.txt
@@ -9,6 +9,5 @@ touch _schulklassen/M122-AP22b.txt
 touch _schulklassen/M122-AP22c.txt
 touch _schulklassen/M122-AP22d.txt
 echo -e "Müller\nSchmidt\nTrinkler\nDuss\nIneichen\nFernandes\nHeinzer\nGates\nMusk\nShaqiri\nXhaka\nRonaldo" > _schulklassen/M122-AP22b.txt
-echo -e "Müller\nSchmidt\nTrinkler\nDuss\nIneichen\nFernandes\nHeinzer\nGates\nMusk\nShaqiri\nXhaka\nRonaldo" > _schulklassen/M122-AP22c.txt
-echo -e "Müller\nSchmidt\nTrinkler\nDuss\nIneichen\nFernandes\nHeinzer\nGates\nMusk\nShaqiri\nXhaka\nRonaldo" > _schulklassen/M122-AP22d.txt
+echo -e "Meier\nWiegel\nFrei\nBayer\nHodel\nNunes\nSchelber\nSchneider\nTrump\nRosenwasser\nOrban\nRonaldinho" > _schulklassen/M122-AP22c.txt
 
