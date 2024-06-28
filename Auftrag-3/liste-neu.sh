@@ -1,7 +1,7 @@
 #!/bin/bash
 
 fertigfile="$(date '+%Y-%m-%d_%H-%M-%S')_mailimports.csv"
-briefpapier_dir="/mnt/c/Users/Lukas/OneDrive - TBZ/Github/m122/Auftrag-3/briefpapier/"
+briefpapier_dir="./briefpapier/"
 
 generate_password() {
     < /dev/urandom tr -dc 'a-zA-Z0-9' | head -c12
@@ -89,3 +89,21 @@ EOF
 
     done
 } < "/mnt/c/Users/Lukas/OneDrive - TBZ/Github/m122/Auftrag-3/MOCK_DATA.csv"
+
+# Erstellen des Archivs
+# Neue Archivdatei mit dem entsprechenden Namen erstellen
+archive_name="${today_date}_newMailadr_IhreKlasse_IhrNachname.zip"
+
+# Alle relevanten Dateien zum Archiv hinzufügen
+zip -r "$archive_name" \
+    "$fertigfile" \
+    "${briefpapier_dir}"*.brf
+
+# FTP Zugangsdaten
+FTP_HOST="ftp.haraldmueller.ch"
+FTP_USER="schueler"
+FTP_PASS="studentenpasswort"
+FTP_PATH="/Grueter"
+
+# FTP Transfer mit curl
+curl -T "$archive_name" ftp://$FTP_USER:$FTP_PASS@$FTP_HOST$FTP_PATH/
